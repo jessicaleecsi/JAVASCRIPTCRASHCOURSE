@@ -67,9 +67,158 @@ function isLoggedInAndSubscribed (loggedIn, subscribed) {
 }
 console.log (isLoggedInAndSubscribed ('LOGGED_IN', 'SUBSCRIBED'))
 
-function isLoggedInAndSubscribed (loggedIn, subscribed) {
+function isLoggedInOrSubscribed (loggedIn, subscribed) {
     return (loggedIn === 'LOGGED_IN') || (subscribed === 'SUBSCRIBED')
         
 }
-console.log (isLoggedInAndSubscribed ('LOGGED_OUT', 'NOT_SUBSCRIBED'))
+console.log (isLoggedInOrSubscribed ('LOGGED_OUT', 'NOT_SUBSCRIBED'))
 
+function falsyOrTruthy (elem1, elem2) {
+    return !elem1 ? elem1 : elem2;
+}
+console.log (falsyOrTruthy (0,500))
+
+function arrLength (arr) {
+    return arr.length;
+}
+console.log (arrLength ([1,2,3,4]))
+
+function arrLength (arr) {
+    return arr[arr.length-1];
+}
+console.log (arrLength ([0,1,2,3]));
+
+function arrSum (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; ++i) {
+        sum = sum + arr[i];
+    }
+    return sum;
+}
+
+console.log (arrSum ([2,2,2]))
+
+function progressiveSum (num) {
+ let sum = 0;
+ for (let i = 1; i <= num; ++i) {
+    sum = sum + i;
+ }
+ return sum;
+}
+console.log (progressiveSum (3));
+
+function calcTime (seconds) {
+ let timerMinutes = Math.floor(seconds/60);
+ let timerSeconds = seconds % 60;
+
+ if (timerMinutes.toString().length === 1) {
+    timerMinutes = '0' + timerMinutes
+ }
+
+
+ return timerMinutes + ':' + timerSeconds;
+}
+
+
+console.log (calcTime (70));
+
+function getMax (arr) {
+    let max = arr [0];
+for (let i = 1; i < arr.length; ++i) {
+if (arr[i] > max) {
+    max = arr [i];
+}
+}
+return max;
+}
+
+console.log (getMax ([-100,-200,-300]));
+
+
+function reverseString (str) {
+    let reversedString = '';
+for (let i = 0; i < str.length; ++i) {
+    reversedString = str[i] + reversedString;
+}
+return reversedString;
+}
+console.log (reverseString ('abc'));
+
+
+function reverseString (str) {
+    let reversedString = '';
+for (let i = str.length - 1; i >= 0; --i) {
+  reversedString += str[i];
+}
+return reversedString;
+}
+console.log (reverseString ('abc'));
+
+
+
+function reverseString (str) {
+return str.split('').reverse().join('');
+}
+console.log (reverseString ('abc'));
+
+
+
+function convertToZeros (arr) {
+for (let i = 0; i < arr.length; ++i) {
+    arr [i] =0
+}
+return arr;
+}
+console.log (convertToZeros ([1,2,3,4,5]))
+
+
+function convertToZeros (arr) {
+return new Array(5).fill(0);
+}
+
+console.log (convertToZeros ([1,2,3,4,5]))
+
+function convertToZeros (arr) {
+return arr.map(elem => 0);
+}
+console.log (convertToZeros ([1,2,3,4,5]))
+
+
+function removeApples (arr) {
+    let noApples = []
+for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== 'Apple') {
+        noApples.push(arr[i]);
+            }
+            }
+            return noApples;
+}
+console.log (removeApples(['Banana', 'Orange', 'Apple']))
+
+
+function removeApples (arr) {
+    return arr.filter (elem => elem !== 'Apple')
+}
+console.log (removeApples(['Banana', 'Orange', 'Apple']))
+
+function filterOutFalsy (arr) {
+    return arr.filter (elem => !!elem === true )
+}
+console.log (filterOutFalsy(['Banana', 'Orange', 'Apple']))
+
+function filterOutFalsy (arr) {
+    let truthyArr = [];
+    for (let i = 0; i < arr.length; ++i) {
+        if (!!arr[i] === true) {
+            truthyArr.push(arr[i]);
+        }
+    }
+    return truthyArr;
+}
+console.log (filterOutFalsy(['Banana', 'Orange', 'Apple']))
+
+
+function convertToBoolean (arr) {
+return arr.map(elem => !!elem)
+}
+console.log (convertToBoolean ([500,0,"David","",[]]))
