@@ -214,10 +214,41 @@ function filterOutFalsy (arr) {
     }
     return truthyArr;
 }
-console.log (filterOutFalsy(['Banana', 'Orange', 'Apple']))
+console.log(filterOutFalsy(['Banana', 'Orange', 'Apple']))
 
 
 function convertToBoolean (arr) {
 return arr.map(elem => !!elem)
 }
-console.log (convertToBoolean ([500,0,"David","",[]]))
+console.log(convertToBoolean ([500,0,"David","",[]]))
+
+function showRating(rating) {
+    let ratings = "";
+    for (let i = 0; i < Math.floor (rating); ++i) {
+        ratings += "*"
+        if (i !== Math.floor (rating) -1 ) {
+            ratings +=  " "
+        }
+    }
+    if (!Number.isInteger(ratings)) {
+       ratings += " .";
+    }
+
+    return ratings;
+}
+console.log(showRating (4.5));
+
+function sortLowToHigh(numbers) {
+return numbers.sort((a, b) => a - b);
+}
+
+console.log(sortLowToHigh([5,10,0,-5]));
+
+function sortHighToLow (numbers) {
+return numbers.sort ((a, b) => {return b.price - a.price})
+}
+console.log(sortHighToLow([
+    {id: 1, price: 50}, 
+    {id: 2, price: 0},
+    {id: 3, price: 500},
+]));
