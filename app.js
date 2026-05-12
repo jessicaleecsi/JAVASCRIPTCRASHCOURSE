@@ -73,6 +73,9 @@ function isLoggedInOrSubscribed (loggedIn, subscribed) {
 }
 console.log (isLoggedInOrSubscribed ('LOGGED_OUT', 'NOT_SUBSCRIBED'))
 
+//* MEDIUM SECTION *//
+
+
 function falsyOrTruthy (elem1, elem2) {
     return !elem1 ? elem1 : elem2;
 }
