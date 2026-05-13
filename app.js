@@ -245,10 +245,20 @@ return numbers.sort((a, b) => a - b);
 console.log(sortLowToHigh([5,10,0,-5]));
 
 function sortHighToLow (numbers) {
-return numbers.sort ((a, b) => {return b.price - a.price})
+return numbers.sort ((a, b) => b.price - a.price)
 }
 console.log(sortHighToLow([
     {id: 1, price: 50}, 
     {id: 2, price: 0},
     {id: 3, price: 500},
 ]));
+
+async function postsbyUser(userId) {
+const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+const result = await promise.json ();
+const posts = result.filter(element => element.userId === userId)
+console.log (posts)
+}
+
+console.log (postsByUser(4))
+
